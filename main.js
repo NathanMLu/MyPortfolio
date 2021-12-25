@@ -1,5 +1,3 @@
-import './style.css'
-
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 
@@ -13,8 +11,6 @@ function init() {
 
     // Scene
     scene = new THREE.Scene();
-
-
 
     // Point Light (shadows)
     const pointLight = new THREE.PointLight(0xffffff);
@@ -70,8 +66,17 @@ function loadModels() {
     start();
 }
 
+function createDonut(){
+    const geometry = new THREE.TorusGeometry(5, 2, 16, 100);
+    const material = new THREE.MeshStandardMaterial({ color: 0x468B95 });
+    const torus = new THREE.Mesh(geometry, material);
+    torus.position.set(30,15,0);
+    scene.add(torus);
+}
+
 function start() {
     scrollHandler();
+    createDonut();
 
     animate();
 }
