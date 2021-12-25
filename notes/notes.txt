@@ -6,7 +6,7 @@ Text-box to talk to AI - centered on screen, minimize
 Food Theme:
 - random food drops from top on scroll, sfx when it hits the bottom. Start a pile at the bottom, use 2d?
 - White background, Apple style font
--
+- Move mouth based on mouse position x
 
 
 - Scroll and generates new foods, some sort of interaction with swipe to move them,

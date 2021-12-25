@@ -1,7 +1,14 @@
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
+@font-face {
+  font-family: sanfrancisco;
+  src: url('/resources/fonts/sf_bold.otf');
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 :root {
@@ -10,7 +17,12 @@
   --blue: #07617D;
   --dark-blue: #2E383F;
 
+  font-family: sanfrancisco;
   margin: 0;
+}
+
+#wrapper {
+  padding: 1% 2% 0;
 }
 
 main {
@@ -19,4 +31,39 @@ main {
   position: absolute;
   width: 100%;
 }
+
+/* THREE.JS */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* FOR NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 17%;
+  padding-right: 17%;
+}
+
+.navbar img {
+  height: 100px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-size: large;
+}
+
+.navbar a:hover{
+  color: var(--blue);
+}
+
+.menu a{
+  margin: 15px;
+}
+
 
