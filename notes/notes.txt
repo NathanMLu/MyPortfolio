@@ -1,0 +1,21 @@
+Machine Learning Based
+Content is more important than the design! Write the actual content first...
+
+Text-box to talk to AI - centered on screen, minimize
+
+Food Theme:
+- random food drops from top on scroll, sfx when it hits the bottom. Start a pile at the bottom, use 2d?
+- White background, Apple style font
+-
+
+
+- Scroll and generates new foods, some sort of interaction with swipe to move them,
+- Make the food a game,
+
+Themes:
+- Professional, clean, just normal
+- 3d space background, what I had originally
+- Food/Music related, more in the middle ground
+-
+
+Color:
