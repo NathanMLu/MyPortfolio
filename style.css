@@ -3,14 +3,14 @@
   src: url('/resources/fonts/sf_bold.otf');
 }
 
+@font-face {
+  font-family: sf_normal;
+  src: url('/resources/fonts/sanfrancisco.otf');
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-html {
-  box-sizing: border-box;
-}
-
 :root {
   --orange: #F9A828;
   --white: #ECECEB;
@@ -44,12 +44,12 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 17%;
-  padding-right: 17%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .navbar img {
-  height: 100px;
+  height: 80px;
 }
 
 .navbar a {
@@ -59,11 +59,40 @@ main {
 }
 
 .navbar a:hover{
-  color: var(--blue);
+  color: var(--orange);
 }
 
 .menu a{
   margin: 15px;
 }
+
+/* TITLE */
+.title {
+  margin-left: 19%;
+  margin-right: 19%;
+  margin-top: 150px;
+}
+
+.title h1 {
+  margin: 0;
+  font-family: sanfrancisco;
+  font-size: 80px;
+}
+
+.greeting {
+  color: var(--orange);
+  margin-left: 7px;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+
+.name {
+  color: var(--dark-blue);
+}
+
+.short {
+  color: var(--blue);
+}
+
 
 

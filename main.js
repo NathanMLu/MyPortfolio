@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+/*import * as THREE from 'three';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 let scene, camera, renderer, loader;
@@ -47,7 +47,7 @@ function onWindowResize() {
 }
 
 function loadModels() {
-    /*
+
         const loadAsync = url => {
             return new Promise(resolve => {
                 loader.load(url, gltf => {
@@ -61,8 +61,6 @@ function loadModels() {
 
             start();
         })
-
-         */
     start();
 }
 
@@ -137,3 +135,4 @@ function animate() {
 
 
 init();
+ */
