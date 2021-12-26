@@ -76,22 +76,71 @@ main {
 .title h1 {
   margin: 0;
   font-family: sanfrancisco;
-  font-size: 80px;
 }
 
 .greeting {
   color: var(--orange);
-  margin-left: 7px;
+  margin-left: 6px;
   margin-bottom: 0px;
   font-size: 18px;
 }
 
 .name {
+  font-size: 80px;
   color: var(--dark-blue);
 }
 
 .short {
+  font-size: 80px;
   color: var(--blue);
+}
+
+.description {
+  color: var(--blue);
+  width: 50%;
+  margin-left: 6px;
+}
+
+/* If less than 1400 */
+@media only screen and (max-width: 1400px) {
+  .description {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .description {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .description {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+  .title {
+    margin-top: 60px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .navbar a {
+    font-size: 15px;
+  }
+
+  .description {
+    width: 90%;
+  }
+
+  .short {
+    font-size: 60px;
+  }
 }
 
 
