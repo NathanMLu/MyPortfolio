@@ -16,6 +16,10 @@ Themes:
 - Professional, clean, just normal
 - 3d space background, what I had originally
 - Food/Music related, more in the middle ground
--
 
-Color:
+About:
+- Who am i, rough backstory, keep it short
+- Skills, put icons of different technologies
+- Add links for achievements
+- How I started?
+
