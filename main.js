@@ -1,4 +1,4 @@
-/*import * as THREE from 'three';
+import * as THREE from 'three';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 let scene, camera, renderer, loader;
@@ -47,7 +47,6 @@ function onWindowResize() {
 }
 
 function loadModels() {
-
         const loadAsync = url => {
             return new Promise(resolve => {
                 loader.load(url, gltf => {
@@ -99,7 +98,7 @@ function scrollHandler() {
         }
 
         // Scrolling
-        moveCamera();
+        //moveCamera();
 
         timer = setTimeout(function () {
             console.log("Now they're not scrolling");
@@ -135,4 +134,3 @@ function animate() {
 
 
 init();
- */

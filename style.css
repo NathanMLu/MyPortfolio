@@ -165,10 +165,14 @@ main {
 }
 
 .me img.pixel {
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 1s;
     width: 225px;
 }
 
 .me img.pfp {
+    margin-top: 10px;
     position: absolute;
     top: 0;
     right: 0;
@@ -179,11 +183,6 @@ main {
     transition: opacity 1s;
 }
 
-.me img.pixel {
-    opacity: 1;
-    transition: opacity 1s;
-}
-
 .me:hover img.pfp {
     opacity: 1;
 }
@@ -191,30 +190,6 @@ main {
 .me:hover img.pixel {
     opacity: 0;
 }
-
-
-/*
-.me {
-  justify-content: end;
-}
-
-.my-img {
-  width: 250px;
-}
-
-.pixel {
-  display:none;
-  width: 250px;
-}
-
-.me:hover .my-img {
-  display:none;
-}
-
-.me:hover .pixel {
-  display:block;
-}
-*/
 
 /* MEDIA RESIZING */
 /* If less than 1400 */
