@@ -13,10 +13,11 @@
 }
 
 :root {
-    --orange: #F9A828;
-    --white: #ECECEB;
-    --blue: #0474BA;
-    --dark-blue: #2E383F;
+    --background-color: #ECECEB;
+    --dark-color: #2E383F;
+    --middle-color: #0474BA;
+    --highlight-one: #fb8500;
+    --highlight-two: #fb8500;
 
     font-family: sanfrancisco;
     margin: 0;
@@ -55,20 +56,19 @@ main {
     height: 80px;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: var(--dark-blue);
-    font-size: large;
-}
-
 .menu a {
     margin: 20px;
 }
 
-.navbar a:hover {
-    color: var(--orange);
+.navbar a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: large;
 }
 
+.navbar a:hover {
+    color: var(--highlight-two);
+}
 
 .switch {
     position: fixed;
@@ -101,6 +101,7 @@ main {
 .slider:before {
     border-radius: 50%;
     position: absolute;
+    text-align: center;
     content: "🌙";
     height: 26px;
     width: 26px;
@@ -109,12 +110,6 @@ main {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-}
-
-
-input:checked {
-    --white: #2E383F;
-    --dark-blue: #ECECEB;
 }
 
 input:checked + .slider:before {
@@ -140,7 +135,7 @@ input:checked + .slider:before {
 }
 
 .greeting {
-    color: var(--orange);
+    color: var(--dark-color);
     margin-left: 6px;
     margin-bottom: 0px;
     font-size: 18px;
@@ -148,16 +143,16 @@ input:checked + .slider:before {
 
 .name {
     font-size: 80px;
-    color: var(--dark-blue);
+    color: var(--highlight-two);
 }
 
 .short {
     font-size: 80px;
-    color: var(--blue);
+    color: var(--middle-color);
 }
 
 .description {
-    color: var(--blue);
+    color: var(--dark-color);
     width: 50%;
     margin-left: 6px;
 }
@@ -165,16 +160,16 @@ input:checked + .slider:before {
 .contact_me {
     font-family: sanfrancisco;
     background-color: transparent;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--highlight-two);
     border-radius: 5px;
-    color: var(--orange);
+    color: var(--highlight-two);
     padding: 15px 32px;
     text-align: center;
     margin-left: 6px;
 }
 
 .contact_me:hover {
-    background-color: rgba(249, 168, 40, 0.1);
+    background-color: #fb850010;
 }
 
 /* FOR ABOUT */
@@ -186,7 +181,7 @@ input:checked + .slider:before {
 
 .about h2 {
     font-size: xx-large;
-    color: var(--dark-blue);
+    color: var(--highlight-one);
 }
 
 .about hr {
@@ -194,16 +189,15 @@ input:checked + .slider:before {
     padding-top: 2px;
     border: none;
     width: 40%;
-    background-color: var(--orange);
+    background-color: var(--middle-color);
 }
 
 .about-wrapper {
-    color: var(--blue);
+    color: var(--dark-color);
     display: flex;
     gap: 10%;
 }
 
-/* ABOUT TEXT */
 .about-desc {
     flex: 0 0 50%;
     justify-content: flex-start;
@@ -211,15 +205,14 @@ input:checked + .slider:before {
 }
 
 .about-wrapper span {
-    color: var(--orange);
+    color: var(--highlight-one);
 }
 
 .about-desc a {
-    color: var(--orange);
+    color: var(--highlight-one);
     text-decoration: none;
 }
 
-/* ABOUT IMG */
 .me {
     position: relative;
 }
@@ -258,7 +251,7 @@ input:checked + .slider:before {
 
 .skills .skills-heading {
     font-size: xx-large;
-    color: var(--dark-blue);
+    color: var(--highlight-two);
 }
 
 .skills hr {
@@ -266,7 +259,7 @@ input:checked + .slider:before {
     padding-top: 2px;
     border: none;
     width: 46%;
-    background-color: var(--orange);
+    background-color: var(--middle-color);
 }
 
 .container {
@@ -277,15 +270,15 @@ input:checked + .slider:before {
 }
 
 .container .languages {
-    background: rgba(7, 97, 125, 0.5);
+    background: #0474BA40;
 }
 
 .container .technologies {
-    background: rgba(7, 97, 125, 0.5);
+    background: #0474BA60;
 }
 
 .container .software {
-    background: rgba(7, 97, 125, 0.5);
+    background: #0474BA80;
 }
 
 .container span {
@@ -295,7 +288,7 @@ input:checked + .slider:before {
     justify-content: center;
     text-align: center;
     align-items: center;
-    color: var(--dark-blue);
+    color: var(--dark-color);
 }
 
 .languages:hover span {

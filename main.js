@@ -10,17 +10,25 @@ function darkMode() {
 
     dark.addEventListener('change', function () {
         if (this.checked) {
-            console.log("Checkbox is checked..");
-            scene.background = new THREE.Color(0x2E383F);
-            document.documentElement.style.setProperty('--dark-blue', '#ECECEB');
-            document.documentElement.style.setProperty('--white', '#ECECEB');
+
+            // Dark Color
             my_logo.src = "/dark.svg";
+            scene.background = new THREE.Color(0x2E383F);
+
+            // Swaps Colors
+            let temp =  getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+            document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
+            document.documentElement.style.setProperty('--dark-color', temp);
+
         } else {
-            console.log("Checkbox is not checked..");
-            scene.background = new THREE.Color(0xECECEB);
-            document.documentElement.style.setProperty('--dark-blue', '#2E383F');
-            document.documentElement.style.setProperty('--white', '#ECECEB');
+            // Light Color
             my_logo.src = "/favicon.svg";
+            scene.background = new THREE.Color(0xECECEB);
+
+            // Swaps Colors
+            let temp =  getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+            document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
+            document.documentElement.style.setProperty('--dark-color', temp);
         }
     });
 }
@@ -45,7 +53,7 @@ function init() {
     scene.add(ambientLight);
 
     // Background Image
-    scene.background = new THREE.Color(0xECECEB);
+    scene.background = new THREE.Color(0xEEEEEE);
 
     // Renderer
     renderer = new THREE.WebGLRenderer({
