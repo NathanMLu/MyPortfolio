@@ -1,13 +1,12 @@
-import * as THREE from 'three';
-import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
-
 let scene, camera, renderer, loader;
+let donut;
+let controls;
 
 function init() {
 
     // Camera
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 300);
-    camera.position.set(0, 50, 70);
+    camera.position.set(0, 0, 50);
 
     // Scene
     scene = new THREE.Scene();
@@ -32,8 +31,19 @@ function init() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
+    /*
+    controls = new OrbitControls(camera, renderer.domElement);
+
+    const lightHelper = new THREE.PointLightHelper(pointLight)
+    const gridHelper = new THREE.GridHelper(200, 50);
+    scene.add(lightHelper, gridHelper)
+
+    const axesHelper = new THREE.AxesHelper(5);
+    scene.add(axesHelper);
+    */
+
     // Load 3d models
-    loader = new GLTFLoader();
+    //loader = new GLTFLoader();
     loadModels();
 
     window.addEventListener('resize', onWindowResize);
@@ -47,35 +57,43 @@ function onWindowResize() {
 }
 
 function loadModels() {
-        const loadAsync = url => {
-            return new Promise(resolve => {
-                loader.load(url, gltf => {
-                    resolve(gltf);
-                })
+    /*
+    const loadAsync = url => {
+        return new Promise(resolve => {
+            loader.load(url, gltf => {
+                resolve(gltf);
             })
-        }
-
-        Promise.all([loadAsync('')]).then(models => {
-            initModels(models);
-
-            start();
         })
+    }
+
+    Promise.all([loadAsync('')]).then(models => {
+        initModels(models);
+        start();
+    })
+    */
     start();
 }
 
-function createDonut(){
-    const geometry = new THREE.TorusGeometry(5, 2, 16, 100);
-    const material = new THREE.MeshStandardMaterial({ color: 0x468B95 });
-    const torus = new THREE.Mesh(geometry, material);
-    torus.position.set(30,15,0);
-    scene.add(torus);
+function initModels(models) {
+    /*
+    foods[0] = models[0].scene;
+    foods[0].scale.set(0.2, 0.2, 0.2);
+    foods[0].position.set(0, 25, 0);
+    foods[0].rotation.set(0, 0, 0);
+    scene.add(foods[0]);
+    */
 }
 
-function start() {
-    scrollHandler();
-    createDonut();
+function updateObjects() {
 
-    animate();
+}
+
+function createDonut() {
+    const geometry = new THREE.TorusGeometry(5, 2, 16, 100);
+    const material = new THREE.MeshStandardMaterial({color: 0x468B95});
+    donut = new THREE.Mesh(geometry, material);
+    donut.position.set(0, 0, 0);
+    scene.add(donut);
 }
 
 function scrollHandler() {
@@ -86,9 +104,6 @@ function scrollHandler() {
         const t = document.body.getBoundingClientRect().top;
 
         // ADD UPDATES HERE
-
-        // Updates camera
-        camera.position.z = t * 0.05;
     }
 
     // Checks if document is being scrolled or not
@@ -98,7 +113,7 @@ function scrollHandler() {
         }
 
         // Scrolling
-        //moveCamera();
+        updateObjects();
 
         timer = setTimeout(function () {
             console.log("Now they're not scrolling");
@@ -108,27 +123,23 @@ function scrollHandler() {
     });
 }
 
-function initModels(models){
-    //EX:
-    //drone = models[0].scene;
-    //earth.position.set(7, 45, -200);
-    //earth.scale.set(0.01, 0.01, 0.01);
-    //scene.add(earth);
-}
+function start() {
+    scrollHandler();
+    createDonut();
 
-function updateObjects(){
-
+    animate();
 }
 
 // Game Loop
 function animate() {
+    donut.rotation.x += 0.01;
+    donut.rotation.y += 0.01;
+    //controls.update();
 
     let timer = Date.now() * 0.01;
 
     requestAnimationFrame(animate);
 
-    // Update
-    updateObjects();
     renderer.render(scene, camera);
 }
 

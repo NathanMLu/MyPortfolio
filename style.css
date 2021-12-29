@@ -121,7 +121,7 @@ main {
 .about {
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 400px;
+    margin-top: 330px;
 }
 
 .about h2 {
@@ -145,7 +145,7 @@ main {
 
 /* ABOUT TEXT */
 .about-desc {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     justify-content: flex-start;
     font-size: medium;
 }
@@ -165,20 +165,18 @@ main {
 }
 
 .me img.pixel {
-    margin-top: 10px;
     opacity: 1;
     transition: opacity 1s;
-    width: 225px;
+    width: 200px;
 }
 
 .me img.pfp {
-    margin-top: 10px;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    width: 225px;
+    width: 200px;
     opacity: 0;
     transition: opacity 1s;
 }
@@ -189,6 +187,95 @@ main {
 
 .me:hover img.pixel {
     opacity: 0;
+}
+
+/* SKILLS SECTION */
+.skills {
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-top: 250px;
+}
+
+.skills .skills-heading {
+    font-size: xx-large;
+    color: var(--dark-blue);
+}
+
+.skills hr {
+    display: inline-block;
+    padding-top: 2px;
+    border: none;
+    width: 46%;
+    background-color: var(--orange);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(10, 125px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 5px;
+}
+
+.container .languages {
+    background: rgba(7, 97, 125, 0.5);
+}
+
+.container .technologies {
+    background: rgba(7, 97, 125, 0.5);
+}
+
+.container .software {
+    background: rgba(7, 97, 125, 0.5);
+}
+
+.container span {
+    font-size: large;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: var(--dark-blue);
+}
+
+.languages:hover span{
+    display: block;
+}
+
+.languages:hover img{
+    display: none;
+}
+
+.languages span {
+    display: none;
+}
+
+.technologies:hover span{
+    display: block;
+}
+
+.technologies:hover img{
+    display: none;
+}
+
+.software span {
+    display: none;
+}
+
+.software:hover span{
+    display: block;
+}
+
+.software:hover img{
+    display: none;
+}
+
+.technologies span {
+    display: none;
+}
+
+.container img {
+    width: 80%
 }
 
 /* MEDIA RESIZING */
