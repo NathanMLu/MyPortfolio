@@ -2,7 +2,31 @@ let scene, camera, renderer, loader;
 let donut;
 let controls;
 
+
+function darkMode() {
+    let my_logo = document.getElementById("my_logo");
+    let dark = document.getElementById("dark");
+    dark.checked = false;
+
+    dark.addEventListener('change', function () {
+        if (this.checked) {
+            console.log("Checkbox is checked..");
+            scene.background = new THREE.Color(0x2E383F);
+            document.documentElement.style.setProperty('--dark-blue', '#ECECEB');
+            document.documentElement.style.setProperty('--white', '#ECECEB');
+            my_logo.src = "/dark.svg";
+        } else {
+            console.log("Checkbox is not checked..");
+            scene.background = new THREE.Color(0xECECEB);
+            document.documentElement.style.setProperty('--dark-blue', '#2E383F');
+            document.documentElement.style.setProperty('--white', '#ECECEB');
+            my_logo.src = "/favicon.svg";
+        }
+    });
+}
+
 function init() {
+    darkMode();
 
     // Camera
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 300);
@@ -125,15 +149,14 @@ function scrollHandler() {
 
 function start() {
     scrollHandler();
-    createDonut();
-
+    //createDonut();
     animate();
 }
 
 // Game Loop
 function animate() {
-    donut.rotation.x += 0.01;
-    donut.rotation.y += 0.01;
+    //donut.rotation.x += 0.01;
+    //donut.rotation.y += 0.01;
     //controls.update();
 
     let timer = Date.now() * 0.01;
