@@ -17,7 +17,10 @@
     --dark-color: #2E383F;
     --middle-color: #0474BA;
     --highlight-one: #fb8500;
-    --highlight-two: #fb8500;
+
+    --grid-one: #2E383F40;
+    --grid-two: #2E383F60;
+    --grid-three: #2E383F80;
 
     font-family: sanfrancisco;
     margin: 0;
@@ -67,7 +70,7 @@ main {
 }
 
 .navbar a:hover {
-    color: var(--highlight-two);
+    color: var(--highlight-one);
 }
 
 .switch {
@@ -143,7 +146,7 @@ input:checked + .slider:before {
 
 .name {
     font-size: 80px;
-    color: var(--highlight-two);
+    color: var(--highlight-one);
 }
 
 .short {
@@ -160,9 +163,9 @@ input:checked + .slider:before {
 .contact_me {
     font-family: sanfrancisco;
     background-color: transparent;
-    border: 2px solid var(--highlight-two);
+    border: 2px solid var(--highlight-one);
     border-radius: 5px;
-    color: var(--highlight-two);
+    color: var(--highlight-one);
     padding: 15px 32px;
     text-align: center;
     margin-left: 6px;
@@ -251,7 +254,7 @@ input:checked + .slider:before {
 
 .skills .skills-heading {
     font-size: xx-large;
-    color: var(--highlight-two);
+    color: var(--highlight-one);
 }
 
 .skills hr {
@@ -270,15 +273,15 @@ input:checked + .slider:before {
 }
 
 .container .languages {
-    background: #0474BA40;
+    background: var(--grid-one);
 }
 
 .container .technologies {
-    background: #0474BA60;
+    background: var(--grid-two);
 }
 
 .container .software {
-    background: #0474BA80;
+    background: var(--grid-three);
 }
 
 .container span {

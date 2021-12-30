@@ -10,7 +10,6 @@ function darkMode() {
 
     dark.addEventListener('change', function () {
         if (this.checked) {
-
             // Dark Color
             my_logo.src = "/dark.svg";
             scene.background = new THREE.Color(0x2E383F);
@@ -20,6 +19,9 @@ function darkMode() {
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
 
+            document.documentElement.style.setProperty('--grid-one', '#ECECEB40');
+            document.documentElement.style.setProperty('--grid-two', '#ECECEB60');
+            document.documentElement.style.setProperty('--grid-three', '#ECECEB80');
         } else {
             // Light Color
             my_logo.src = "/favicon.svg";
@@ -29,6 +31,10 @@ function darkMode() {
             let temp =  getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
+
+            document.documentElement.style.setProperty('--grid-one', '#2E383F40');
+            document.documentElement.style.setProperty('--grid-two', '#2E383F60');
+            document.documentElement.style.setProperty('--grid-three', '#2E383F80');
         }
     });
 }
