@@ -25,7 +25,7 @@ function darkMode() {
         } else {
             // Light Color
             my_logo.src = "/favicon.svg";
-            scene.background = new THREE.Color(0xECECEB);
+            scene.background = new THREE.Color(0xd4d4d3);
 
             // Swaps Colors
             let temp =  getComputedStyle(document.documentElement).getPropertyValue('--background-color');
@@ -59,7 +59,7 @@ function init() {
     scene.add(ambientLight);
 
     // Background Image
-    scene.background = new THREE.Color(0xEEEEEE);
+    scene.background = new THREE.Color(0xf2f2f2);
 
     // Renderer
     renderer = new THREE.WebGLRenderer({

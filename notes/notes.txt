@@ -23,3 +23,12 @@ About:
 - Add links for achievements
 - How I started?
 
+Projects:
+- Liquid Overlay
+- Smilio
+- Web Scraper
+- Rest API
+- Stocks AI
+- Universafe
+
+Other stuff I
