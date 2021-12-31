@@ -126,7 +126,7 @@ main {
     border-radius: 50%;
     position: absolute;
     text-align: center;
-    content: "🌙";
+    content: url('resources/icons/moon.svg');
     height: 26px;
     width: 26px;
     left: 4px;
@@ -137,7 +137,7 @@ main {
 }
 
 input:checked + .slider:before {
-    content: "🌞";
+    content: url('resources/icons/sun.svg');
 }
 
 input:checked + .slider:before {
