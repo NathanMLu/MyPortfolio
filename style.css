@@ -44,6 +44,10 @@ a {
     text-decoration: none;
 }
 
+.bolded {
+    font-family: sanfrancisco;
+}
+
 #wrapper {
     position: relative;
     margin-left: 10%;

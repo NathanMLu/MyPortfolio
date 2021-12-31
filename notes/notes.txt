@@ -31,4 +31,11 @@ Projects:
 - Stocks AI
 - Universafe
 
-Other stuff I
+Todo:
+    - Others section:
+        - Include clubs, articles, etc.
+        - Experience, C3 investments, tech4all
+        - Things I like doing, add something flashy
+    - Add animations:
+        - 3d stuff with mouse moving, scroll
+        - Changes text upon hover
