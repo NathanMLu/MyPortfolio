@@ -32,6 +32,8 @@ Projects:
 - Universafe
 
 Todo:
+    - Add short section (CSS grid) for smaller projects,
+     disclaimer for closed source stuff
     - Others section:
         - Include clubs, articles, etc.
         - Experience, C3 investments, tech4all
@@ -39,3 +41,6 @@ Todo:
     - Add animations:
         - 3d stuff with mouse moving, scroll
         - Changes text upon hover
+
+    - Fix colors:
+

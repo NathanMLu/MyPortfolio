@@ -254,6 +254,11 @@ input:checked + .slider:before {
 
 /* SKILLS SECTION */
 
+.skills {
+    margin-left: 7%;
+    margin-top: 250px;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(10, 100px);
