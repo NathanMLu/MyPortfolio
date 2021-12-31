@@ -174,6 +174,7 @@ input:checked + .slider:before {
     color: var(--dark-color);
     width: 50%;
     margin-left: 6px;
+    font-family: sf_normal;
 }
 
 .contact_me {
@@ -204,9 +205,10 @@ input:checked + .slider:before {
 }
 
 .about-desc {
+    font-family: sf_normal;
     flex: 0 0 50%;
     justify-content: flex-start;
-    font-size: medium;
+    font-size: large;
 }
 
 .about-wrapper span {
@@ -367,7 +369,9 @@ input:checked + .slider:before {
 }
 
 .project-description {
-    color: var(--dark-color);
+    font-size: large;
+    font-family: sf_normal;
+    color: #d4d4d3;
     padding: 0.5% 5% 2% 2%;
     border-radius: 5px;
     background-color: #4e5f6b;
