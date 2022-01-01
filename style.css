@@ -495,6 +495,7 @@ img.youtube {
 }
 
 .other-desc {
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -511,6 +512,7 @@ img.youtube {
 }
 
 .other-desc ul {
+    font-family: sanfrancisco;
     margin: 0;
     padding: 0 0 4%;
 
@@ -521,6 +523,12 @@ img.youtube {
     padding: 2%;
     font-size: x-small;
     display: inline-block;
+}
+
+/*  CONTACT INFO */
+.contact {
+    text-align: center;
+    margin: 250px auto 0;
 }
 
 
