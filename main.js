@@ -12,29 +12,25 @@ function darkMode() {
         if (this.checked) {
             // Dark Color
             my_logo.src = "/dark.svg";
-            scene.background = new THREE.Color(0x2E383F);
+            scene.background = new THREE.Color(0x003f5a);
 
             // Swaps Colors
             let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
+            document.documentElement.style.setProperty('--grid-color', '#bedce3');
 
-            document.documentElement.style.setProperty('--grid-one', '#ECECEB40');
-            document.documentElement.style.setProperty('--grid-two', '#ECECEB60');
-            document.documentElement.style.setProperty('--grid-three', '#ECECEB80');
+
         } else {
             // Light Color
             my_logo.src = "/favicon.svg";
-            scene.background = new THREE.Color(0xd4d4d3);
+            scene.background = new THREE.Color(0xf3f3f6);
 
             // Swaps Colors
             let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
-
-            document.documentElement.style.setProperty('--grid-one', '#2E383F40');
-            document.documentElement.style.setProperty('--grid-two', '#2E383F60');
-            document.documentElement.style.setProperty('--grid-three', '#2E383F80');
+            document.documentElement.style.setProperty('--grid-color', '#4996b3');
         }
     });
 }
@@ -59,7 +55,7 @@ function init() {
     scene.add(ambientLight);
 
     // Background Image
-    scene.background = new THREE.Color(0xf2f2f2);
+    scene.background = new THREE.Color(0xf3f3f6);
 
     // Renderer
     renderer = new THREE.WebGLRenderer({

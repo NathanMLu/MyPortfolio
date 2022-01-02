@@ -13,15 +13,11 @@
 }
 
 :root {
-    --background-color: #d4d4d3;
-    --dark-color: #2E383F;
-    --middle-color: #0474BA;
-    --highlight-one: #F9A828;
-    --other-one: #547980;
-
-    --grid-one: #2E383F40;
-    --grid-two: #2E383F60;
-    --grid-three: #2E383F80;
+    --background-color: #f3f3f6;
+    --dark-color: #003f5a;
+    --middle-color: #007a7a;
+    --highlight-one: #fea02f;
+    --grid-color: #4996b3;
 
     font-family: sanfrancisco;
     margin: 0;
@@ -128,7 +124,7 @@ main {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: ;
+    background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -284,15 +280,15 @@ details > summary::-webkit-details-marker {
 }
 
 .container .languages {
-    background: var(--grid-one);
+    background: var(--grid-color);
 }
 
 .container .technologies {
-    background: var(--grid-two);
+    background: var(--grid-color);
 }
 
 .container .software {
-    background: var(--grid-three);
+    background: var(--grid-color);
 }
 
 .container span {
@@ -302,7 +298,7 @@ details > summary::-webkit-details-marker {
     justify-content: center;
     text-align: center;
     align-items: center;
-    color: var(--dark-color);
+    color: var(--background-color);
 }
 
 .languages:hover span {
@@ -395,10 +391,10 @@ details > summary::-webkit-details-marker {
 .project-description {
     font-size: large;
     font-family: sf_normal;
-    color: #d4d4d3;
+    color: var(--background-color);
     padding: 0.5% 5% 2% 2%;
     border-radius: 5px;
-    background-color: #4e5f6b;
+    background-color: var(--grid-color);
 }
 
 .project-tech {
@@ -496,7 +492,7 @@ img.youtube {
     border-radius: 5px;
     padding-left: 3%;
     padding-right: 3%;
-    background-color: #4e5f6b;
+    background-color: var(--grid-color);
 }
 
 .other-link {
@@ -618,13 +614,13 @@ img.youtube {
 
     .project-image img {
         grid-column: 4 / span 8;
-        filter: grayscale(90%);
+        -webkit-filter: blur(2px);
         z-index: -1;
     }
 
     .proj-other .project-image img {
         grid-column: 4 / span 8;
-        filter: grayscale(90%);
+        -webkit-filter: blur(2px);
         z-index: -1;
     }
 
