@@ -507,12 +507,12 @@ img.youtube {
 }
 
 .other-project p {
+    font-family: sf_normal;
     color: var(--background-color);
     font-size: small;
 }
 
 .other-desc ul {
-    font-family: sanfrancisco;
     margin: 0;
     padding: 0 0 4%;
 
@@ -527,8 +527,24 @@ img.youtube {
 
 /*  CONTACT INFO */
 .contact {
+    width: 50%;
     text-align: center;
-    margin: 250px auto 0;
+    margin: 250px auto;
+}
+
+.contact p {
+    font-family: sf_normal;
+    color: var(--dark-color);
+    padding-bottom: 50px;
+}
+
+.built {
+    text-align: center;
+}
+
+.built a{
+    font-family: sf_normal;
+    color: var(--middle-color);
 }
 
 
