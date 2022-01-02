@@ -12,25 +12,23 @@ function darkMode() {
         if (this.checked) {
             // Dark Color
             my_logo.src = "/dark.svg";
-            scene.background = new THREE.Color(0x003f5a);
+            scene.background = new THREE.Color(0x2E383F);
 
             // Swaps Colors
             let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
-            document.documentElement.style.setProperty('--grid-color', '#bedce3');
 
 
         } else {
             // Light Color
             my_logo.src = "/favicon.svg";
-            scene.background = new THREE.Color(0xf3f3f6);
+            scene.background = new THREE.Color(0xfffdf6);
 
             // Swaps Colors
             let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
-            document.documentElement.style.setProperty('--grid-color', '#4996b3');
         }
     });
 }
@@ -55,7 +53,7 @@ function init() {
     scene.add(ambientLight);
 
     // Background Image
-    scene.background = new THREE.Color(0xf3f3f6);
+    scene.background = new THREE.Color(0xfffdf6);
 
     // Renderer
     renderer = new THREE.WebGLRenderer({

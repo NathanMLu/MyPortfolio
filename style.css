@@ -13,11 +13,10 @@
 }
 
 :root {
-    --background-color: #f3f3f6;
-    --dark-color: #003f5a;
-    --middle-color: #007a7a;
-    --highlight-one: #fea02f;
-    --grid-color: #4996b3;
+    --background-color: #fffdf6;
+    --dark-color: #2E383F;
+    --middle-color: #0474BA;
+    --highlight-one: #F9A828;
 
     font-family: sanfrancisco;
     margin: 0;
@@ -273,6 +272,7 @@ details > summary::-webkit-details-marker {
 }
 
 .container {
+
     display: grid;
     grid-template-columns: repeat(8, 100px);
     grid-template-rows: repeat(3, 120px);
@@ -280,18 +280,19 @@ details > summary::-webkit-details-marker {
 }
 
 .container .languages {
-    background: var(--grid-color);
+    background: var(--dark-color);
 }
 
 .container .technologies {
-    background: var(--grid-color);
+    background: var(--dark-color);
 }
 
 .container .software {
-    background: var(--grid-color);
+    background: var(--dark-color);
 }
 
 .container span {
+    border-radius: 5px;
     font-size: large;
     padding: 10px;
     display: flex;
@@ -394,7 +395,7 @@ details > summary::-webkit-details-marker {
     color: var(--background-color);
     padding: 0.5% 5% 2% 2%;
     border-radius: 5px;
-    background-color: var(--grid-color);
+    background-color: var(--dark-color);
 }
 
 .project-tech {
@@ -492,7 +493,7 @@ img.youtube {
     border-radius: 5px;
     padding-left: 3%;
     padding-right: 3%;
-    background-color: var(--grid-color);
+    background-color: var(--dark-color);
 }
 
 .other-link {
