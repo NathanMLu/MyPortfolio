@@ -585,6 +585,7 @@ img.youtube {
 /* BUILT BY */
 .built {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .built a {
