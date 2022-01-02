@@ -23,6 +23,16 @@ About:
 - Add links for achievements
 - How I started?
 
+Involvement: (ADD TOGGLE TO MAXIMIZE/MINIMIZE IT)
+    - President of Computer Science Student Organization
+    - English tutor for spanish-speaking kids
+    - CEO of Tech4All Electronics
+    - PTK Vice President
+    - World's youngest drone cartographer
+    - Media Producer at ACCENT Student News
+    - Oasis church Keyboardist and Bassist
+    -
+
 Projects:
 - Liquid Overlay
 - Smilio
