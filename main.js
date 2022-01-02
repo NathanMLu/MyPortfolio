@@ -180,5 +180,30 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+/* For Scrolling to location */
+$("#about").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".about").offset().top
+    }, 2000);
+});
+
+$("#projects").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".projects").offset().top
+    }, 2000);
+});
+
+$("#contact").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".contact").offset().top
+    }, 2000);
+});
+
+$(".contact_me").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".contact").offset().top
+    }, 2000);
+});
+
 
 init();

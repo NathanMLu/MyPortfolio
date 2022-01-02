@@ -9,6 +9,7 @@
             integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
             crossorigin="anonymous"></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Nate Lu - Software Engineer</title>
 </head>
 
@@ -24,21 +25,25 @@
             </a>
 
             <div class="menu">
-                <a class="about" href="/">
+                <span id="about">
                     About.
-                </a>
+                </span>
 
-                <a class="projects" href="/">
+                <span id="projects">
                     Projects.
-                </a>
+                </span>
 
-                <a class="contact" href="/">
+                <span id="contact">
                     Contact.
+                </span>
+
+
+                <a id="resume" href="https://drive.google.com/file/d/194SxM624KGjClJmeDptKsThx86SfUWGv/view?usp=sharing" rel="noopener noreferrer" target="_blank">
+                    <span>
+                        Resume.
+                    </span>
                 </a>
 
-                <a class="resume" href="https://drive.google.com/file/d/194SxM624KGjClJmeDptKsThx86SfUWGv/view?usp=sharing" rel="noopener noreferrer" target="_blank">
-                    Resume.
-                </a>
             </div>
 
             <label class="switch">
@@ -120,16 +125,6 @@
                     </div>
                 </div>
             </div>
-            <details>
-                <summary class = "contact_me" id = "more-button">More</summary>
-                <p class = "extra">
-                    When I'm not coding, some of my responsibilities include:
-                    <ul>
-                        <li>President of the Computer Science Student Organization</li>
-
-                    </ul>
-                </p>
-            </details>
         </div>
 
         <div class="skills">

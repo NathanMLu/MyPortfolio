@@ -81,16 +81,13 @@ main {
     height: 80px;
 }
 
-.menu a {
+.menu span {
     margin: 20px;
-}
-
-.navbar a {
     color: var(--dark-color);
     font-size: large;
 }
 
-.navbar a:hover {
+.menu span:hover {
     color: var(--highlight-one);
 }
 
