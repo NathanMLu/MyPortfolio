@@ -15,7 +15,7 @@ function darkMode() {
             scene.background = new THREE.Color(0x2E383F);
 
             // Swaps Colors
-            let temp =  getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+            let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
 
@@ -28,7 +28,7 @@ function darkMode() {
             scene.background = new THREE.Color(0xd4d4d3);
 
             // Swaps Colors
-            let temp =  getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+            let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
             document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
             document.documentElement.style.setProperty('--dark-color', temp);
 
@@ -181,25 +181,25 @@ function animate() {
 }
 
 /* For Scrolling to location */
-$("#about").click(function() {
+$("#about").click(function () {
     $('html, body').animate({
         scrollTop: $(".about").offset().top
     }, 2000);
 });
 
-$("#projects").click(function() {
+$("#projects").click(function () {
     $('html, body').animate({
         scrollTop: $(".projects").offset().top
     }, 2000);
 });
 
-$("#contact").click(function() {
+$("#contact").click(function () {
     $('html, body').animate({
         scrollTop: $(".contact").offset().top
     }, 2000);
 });
 
-$(".contact_me").click(function() {
+$(".contact_me").click(function () {
     $('html, body').animate({
         scrollTop: $(".contact").offset().top
     }, 2000);

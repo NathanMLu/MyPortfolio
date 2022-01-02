@@ -259,6 +259,7 @@ input:checked + .slider:before {
 details > summary {
     list-style: none;
 }
+
 details > summary::-webkit-details-marker {
     display: none;
 }
@@ -267,6 +268,7 @@ details > summary::-webkit-details-marker {
     color: var(--dark-color);
     font-family: sf_normal;
 }
+
 /* SKILLS SECTION */
 
 .skills {
@@ -432,9 +434,6 @@ img.youtube {
 }
 
 
-
-
-
 /* OTHER PROJECTS */
 .proj-other {
     padding-bottom: 150px;
@@ -560,7 +559,26 @@ img.youtube {
 .contact p {
     font-family: sf_normal;
     color: var(--dark-color);
-    padding-bottom: 50px;
+}
+
+/* SOCIALS */
+.socials {
+    padding-top: 30px;
+}
+
+.socials img {
+    width: 30px;
+}
+
+.socials ul {
+    margin: 0;
+    padding: 0;
+}
+
+.socials li {
+    display: inline-block;
+    padding: 10px;
+    list-style-type: none;
 }
 
 
@@ -569,11 +587,10 @@ img.youtube {
     text-align: center;
 }
 
-.built a{
+.built a {
     font-family: sf_normal;
     color: var(--middle-color);
 }
-
 
 /* MEDIA RESIZING */
 @media only screen and (max-width: 1550px) {
