@@ -196,16 +196,19 @@ input:checked + .slider:before {
 
 
 .about-wrapper {
+    position: relative;
     color: var(--dark-color);
     display: flex;
-    gap: 10%;
+    align-items: center;
+    gap: 3%;
+    font-family: sf_normal;
+    font-size: large;
 }
 
 .about-desc {
-    font-family: sf_normal;
     flex: 0 0 50%;
     justify-content: flex-start;
-    font-size: large;
+
 }
 
 .about-wrapper span {
@@ -259,9 +262,29 @@ details > summary::-webkit-details-marker {
     display: none;
 }
 
-.extra {
+.iam li {
+    padding: 0;
+    margin: 0 0 5px;
     color: var(--dark-color);
     font-family: sf_normal;
+}
+
+.iam h3 {
+    color: var(--highlight-one);
+}
+
+.iam ul {
+    list-style: none; /* Remove default bullets */
+}
+
+.iam ul li::before {
+    content: "\21AA";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--middle-color); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    padding-right: 5px;
 }
 
 /* SKILLS SECTION */
@@ -651,6 +674,10 @@ img.youtube {
 }
 
 @media only screen and (max-width: 800px) {
+    .iam {
+        display: none;
+    }
+
     .contact {
         width: 80%;
     }
@@ -661,6 +688,10 @@ img.youtube {
 }
 
 @media only screen and (max-width: 650px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .container {
         grid-template-columns: repeat(3, 100px);
         grid-template-rows: repeat(8, 120px);
@@ -686,10 +717,6 @@ img.youtube {
 }
 
 @media only screen and (max-width: 540px) {
-
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .container {
         grid-template-columns: repeat(2, 100px);
