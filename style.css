@@ -722,6 +722,15 @@ img.youtube {
 }
 
 @media only screen and (max-width: 650px) {
+
+    .switch {
+        display:none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
