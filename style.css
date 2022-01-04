@@ -285,10 +285,11 @@ details > summary::-webkit-details-marker {
     display: none;
 }
 
+/* I AM */
+
 .iam li {
     padding: 0;
     margin: 0 0 5px;
-    color: var(--dark-color);
     font-family: sf_normal;
 }
 
@@ -302,12 +303,20 @@ details > summary::-webkit-details-marker {
 
 .iam ul li::before {
     content: "\21AA";
-    color: var(--middle-color);
+
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
     padding-right: 5px;
+}
+
+.iam li a {
+    color: var(--dark-color);
+}
+
+.iam li a:hover {
+    color: var(--middle-color);
 }
 
 /* SKILLS SECTION */
@@ -653,6 +662,10 @@ img.youtube {
 
     .iam {
         display: none;
+    }
+
+    .about-wrapper {
+        gap: 10%;
     }
 
     .description {
