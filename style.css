@@ -545,8 +545,9 @@ img.youtube {
 
 .other-project {
     border-radius: 5px;
-    padding-left: 3%;
-    padding-right: 3%;
+    position: relative;
+    overflow: hidden;
+    padding: 3%;
     background-color: var(--dark-color);
 }
 
@@ -590,7 +591,6 @@ img.youtube {
 .other-desc ul {
     margin: 0;
     padding: 0 0 4%;
-
 }
 
 .other-desc li {
