@@ -199,5 +199,15 @@ $(".contact_me").click(function () {
     }, 2000);
 });
 
+let scrolldown = document.querySelector(".scroll-down p");
+$(window).scroll(function () {
+    if ($(window).scrollTop() == 0)
+        scrolldown.innerHTML = "SCROLL DOWN";
+    else if ($(window).height() + $(window).scrollTop() == $(document).height()) {
+        scrolldown.innerHTML = "SCROLL UP";
+    }
+});
+
+
 
 init();

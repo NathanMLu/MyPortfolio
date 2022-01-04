@@ -109,7 +109,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--dark-color);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -123,7 +123,7 @@ main {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: var(--background-color);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -187,6 +187,29 @@ input:checked + .slider:before {
 
 .contact_me:hover {
     background-color: #fb850010;
+}
+
+/* FOR SCROLL */
+.scroll-down {
+    position: fixed;
+    bottom: 80px;
+    left: 2%;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    color: var(--middle-color);
+}
+
+.scroll-down:after {
+    content: "";
+    width: 2px;
+    height: 64px;
+    background-color: var(--middle-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -80px;
 }
 
 /* FOR ABOUT */
@@ -274,21 +297,20 @@ details > summary::-webkit-details-marker {
 }
 
 .iam ul {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
 }
 
 .iam ul li::before {
-    content: "\21AA";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: var(--middle-color); /* Change the color */
-    font-weight: bold; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    content: "\21AA";
+    color: var(--middle-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
     padding-right: 5px;
 }
 
 /* SKILLS SECTION */
-
 .skills {
     margin-left: 7%;
     margin-top: 200px;
@@ -628,6 +650,11 @@ img.youtube {
 }
 
 @media only screen and (max-width: 1200px) {
+
+    .iam {
+        display: none;
+    }
+
     .description {
         width: 70%;
     }
@@ -674,9 +701,6 @@ img.youtube {
 }
 
 @media only screen and (max-width: 800px) {
-    .iam {
-        display: none;
-    }
 
     .contact {
         width: 80%;
