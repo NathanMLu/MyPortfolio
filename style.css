@@ -303,7 +303,7 @@ details > summary::-webkit-details-marker {
 
 .iam ul li::before {
     content: "\21AA";
-
+    color: var(--middle-color);
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -647,8 +647,8 @@ img.youtube {
 /* MEDIA RESIZING */
 @media only screen and (max-width: 1550px) {
     .container {
-        grid-template-columns: repeat(6, 100px);
-        grid-template-rows: repeat(4, 120px);
+        grid-template-columns: repeat(8, 100px);
+        grid-template-rows: repeat(3, 120px);
     }
 }
 
@@ -700,13 +700,14 @@ img.youtube {
 }
 
 @media only screen and (max-width: 1000px) {
-    .description {
-        width: 80%;
-    }
 
     .container {
-        grid-template-columns: repeat(4, 100px);
-        grid-template-rows: repeat(6, 120px);
+        grid-template-columns: repeat(6, 100px);
+        grid-template-rows: repeat(4, 120px);
+    }
+
+    .description {
+        width: 80%;
     }
 }
 
@@ -723,6 +724,11 @@ img.youtube {
 
 @media only screen and (max-width: 650px) {
 
+    .container {
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(6, 120px);
+    }
+
     .switch {
         display:none;
     }
@@ -733,11 +739,6 @@ img.youtube {
 
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .container {
-        grid-template-columns: repeat(3, 100px);
-        grid-template-rows: repeat(8, 120px);
     }
 
     .proj-other .project-image {
