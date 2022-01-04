@@ -659,33 +659,30 @@ img.youtube {
         width: 70%;
     }
 
+    .project-content {
+        grid-column: 3 / span 8;
+    }
+
+    .proj-other .project-content {
+        grid-column: 2 / span 8;
+    }
+
     .project-image {
-        grid-column: 4 / span 8;
+        grid-column: 2 / span 7;
+    }
+
+    .proj-other .project-image {
+        grid-column: 4 / span 7;
     }
 
     .project-image img {
-        grid-column: 4 / span 8;
         -webkit-filter: blur(2px);
         z-index: -1;
     }
 
     .proj-other .project-image img {
-        grid-column: 4 / span 8;
         -webkit-filter: blur(2px);
         z-index: -1;
-    }
-
-
-    .project-content {
-        grid-column: 3 / span 8;
-    }
-
-    .proj-other .project-image {
-        grid-column: 4 / span 8;
-    }
-
-    .proj-other .project-content {
-        grid-column: 3 / span 8;
     }
 }
 
