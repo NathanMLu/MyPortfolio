@@ -203,7 +203,7 @@ let scrolldown = document.querySelector(".scroll-down p");
 $(window).scroll(function () {
     if ($(window).scrollTop() == 0)
         scrolldown.innerHTML = "SCROLL DOWN";
-    else if ($(window).height() + $(window).scrollTop() == $(document).height()) {
+    else if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
         scrolldown.innerHTML = "SCROLL UP";
     }
 });

@@ -42,9 +42,6 @@ Projects:
 - Universafe
 
 Todo:
-    - Add short section (CSS grid) for smaller projects,
-     disclaimer for closed source stuff
-    - Fix skills section
     - Add hover to show other projects images
     - Others section:
         - Include clubs, articles, etc.
