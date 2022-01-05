@@ -1,6 +1,7 @@
-let scene, camera, renderer, loader;
-let donut;
-let desk;
+let scene, camera, renderer, loader, sizes;
+let material, geometry;
+let sphere;
+let bubbles = [];
 
 /* FOR DEBUG ONLY, REMOVE AFTER */
 let controls;
@@ -8,16 +9,22 @@ let controls;
 function init() {
     darkMode();
 
-    // Camera
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 300);
-    camera.position.set(0, 0, 15);
+    sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight
+    }
 
     // Scene
     scene = new THREE.Scene();
 
+    // Camera
+    camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+    camera.position.set(0, 0, 2);
+    scene.add(camera)
+
     // Point Light (shadows)
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(20, 20, 20);
+    const pointLight = new THREE.PointLight(0xffffff, 0.1);
+    pointLight.position.set(2, 3, 4);
     scene.add(pointLight);
 
     // Main Light
@@ -31,13 +38,13 @@ function init() {
     renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('#bg')
     });
-
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
     // Load 3d models
     loader = new THREE.GLTFLoader();
     loadModels();
+
 
     //const lightHelper = new THREE.PointLightHelper(pointLight)
     //const gridHelper = new THREE.GridHelper(200, 50);
@@ -48,14 +55,18 @@ function init() {
 }
 
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 }
 
 function loadModels() {
-
+    /*
     const loadAsync = url => {
         return new Promise(resolve => {
             loader.load(url, gltf => {
@@ -65,78 +76,66 @@ function loadModels() {
     }
 
     Promise.all([loadAsync('resources/models/desk/scene.gltf')]).then(models => {
-        initModels(models);
+        //initModels(models);
         start();
     })
 
+     */
+    start();
 }
 
 function initModels(models) {
+    /*
     desk = models[0].scene;
     desk.scale.set(1, 1, 1);
-    desk.position.set(8, -2, 0);
-    desk.rotation.set(0, -Math.PI/1.5, 0);
+    desk.position.set(0, 0, 0);
+    desk.rotation.set(0, -Math.PI/2, 0);
     scene.add(desk);
 
-
+     */
 }
 
-function updateObjects() {
+function initObjects(){
+    geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
+    material = new THREE.MeshBasicMaterial()
+
+    material.color = new THREE.Color(0xff0000)
+
+    sphere = new THREE.Mesh(geometry,material)
+    scene.add(sphere)
+}
+
+function updateScroll() {
     const t = document.body.getBoundingClientRect().top;
 
     camera.position.y = (t * 0.03);
 }
 
-function createDonut() {
-    const geometry = new THREE.TorusGeometry(5, 2, 16, 100);
-    const material = new THREE.MeshStandardMaterial({color: 0x468B95});
-    donut = new THREE.Mesh(geometry, material);
-    donut.position.set(0, 0, 0);
-    scene.add(donut);
+function updateObjects(elapsedTime) {
+    sphere.rotation.y = .5 * elapsedTime
 }
+
 
 window.addEventListener('resize', onWindowResize);
-document.body.onscroll = updateObjects;
-
-/*
-// Checks if document is being scrolled or not
-function scrollHandler() {
-    let timer;
-
-    document.addEventListener("scroll", function () {
-        if (timer != "undefined") {
-            clearTimeout(timer);
-        }
-
-        // Scrolling
-        //updateObjects();
-
-        timer = setTimeout(function () {
-            // Not scrolling
-
-        }, 10);
-    });
-}
-
- */
+document.body.onscroll = updateScroll;
 
 function start() {
     //scrollHandler();
-    //createDonut();
+    //createBubbles();
+    initObjects();
     animate();
 }
 
 // Game Loop
+const clock = new THREE.Clock()
 function animate() {
-    //donut.rotation.x += 0.01;
-    //donut.rotation.y += 0.01;
-    //controls.update();
+    const elapsedTime = clock.getElapsedTime()
 
-    let timer = Date.now() * 0.01;
-
-    requestAnimationFrame(animate);
+    updateObjects(elapsedTime);
 
     renderer.render(scene, camera);
+
+    requestAnimationFrame(animate);
 }
 
 /* For scrolling to location */
@@ -203,6 +202,5 @@ function darkMode() {
         }
     });
 }
-
 
 init();

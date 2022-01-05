@@ -64,4 +64,9 @@ IDEAS FOR 3d Background:
     - Move drone/spaceship/car left or right based on mouse position, some
     sort of endless runner, need to make it less distracting
 
-    -
+    - Bubbles/ spheres bouncing around change content when scrolling
+
+
+FINAL IDEA:
+     - Bubbles rush to mouse cursor, when you hover on certain items,
+     their texture changes, ie change into drones, etc.
