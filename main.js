@@ -1,5 +1,5 @@
 let scene, camera, renderer, loader, sizes;
-let material, geometry;
+let material, geometry, texture, normal;
 let sphere;
 let bubbles = [];
 
@@ -96,10 +96,13 @@ function initModels(models) {
 }
 
 function initObjects(){
-    geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
-    material = new THREE.MeshBasicMaterial()
-
-    material.color = new THREE.Color(0xff0000)
+    geometry = new THREE.SphereGeometry(1, 64, 32);
+    texture = new THREE.TextureLoader().load('resources/textures/cube.jpg');
+    normal = new THREE.TextureLoader().load('resources/textures/cube_normal.jpg');
+    material = new THREE.MeshStandardMaterial({
+        map: texture,
+        normalMap: normal,
+    });
 
     sphere = new THREE.Mesh(geometry,material)
     scene.add(sphere)
