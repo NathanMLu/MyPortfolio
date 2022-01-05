@@ -1,44 +1,16 @@
 let scene, camera, renderer, loader;
 let donut;
+let desk;
+
+/* FOR DEBUG ONLY, REMOVE AFTER */
 let controls;
-
-
-function darkMode() {
-    let my_logo = document.getElementById("my_logo");
-    let dark = document.getElementById("dark");
-    dark.checked = false;
-
-    dark.addEventListener('change', function () {
-        if (this.checked) {
-            // Dark Color
-            my_logo.src = "/dark.svg";
-            scene.background = new THREE.Color(0x2E383F);
-
-            // Swaps Colors
-            let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
-            document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
-            document.documentElement.style.setProperty('--dark-color', temp);
-
-
-        } else {
-            // Light Color
-            my_logo.src = "/favicon.svg";
-            scene.background = new THREE.Color(0xecede8);
-
-            // Swaps Colors
-            let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
-            document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
-            document.documentElement.style.setProperty('--dark-color', temp);
-        }
-    });
-}
 
 function init() {
     darkMode();
 
     // Camera
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 300);
-    camera.position.set(0, 0, 50);
+    camera.position.set(0, 0, 15);
 
     // Scene
     scene = new THREE.Scene();
@@ -63,22 +35,16 @@ function init() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    /*
-    controls = new OrbitControls(camera, renderer.domElement);
-
-    const lightHelper = new THREE.PointLightHelper(pointLight)
-    const gridHelper = new THREE.GridHelper(200, 50);
-    scene.add(lightHelper, gridHelper)
-
-    const axesHelper = new THREE.AxesHelper(5);
-    scene.add(axesHelper);
-    */
-
     // Load 3d models
-    //loader = new GLTFLoader();
+    loader = new THREE.GLTFLoader();
     loadModels();
 
-    window.addEventListener('resize', onWindowResize);
+    //const lightHelper = new THREE.PointLightHelper(pointLight)
+    //const gridHelper = new THREE.GridHelper(200, 50);
+    //scene.add(lightHelper, gridHelper)
+
+    //const axesHelper = new THREE.AxesHelper(5);
+    //scene.add(axesHelper);
 }
 
 function onWindowResize() {
@@ -89,7 +55,7 @@ function onWindowResize() {
 }
 
 function loadModels() {
-    /*
+
     const loadAsync = url => {
         return new Promise(resolve => {
             loader.load(url, gltf => {
@@ -98,26 +64,27 @@ function loadModels() {
         })
     }
 
-    Promise.all([loadAsync('')]).then(models => {
+    Promise.all([loadAsync('resources/models/desk/scene.gltf')]).then(models => {
         initModels(models);
         start();
     })
-    */
-    start();
+
 }
 
 function initModels(models) {
-    /*
-    foods[0] = models[0].scene;
-    foods[0].scale.set(0.2, 0.2, 0.2);
-    foods[0].position.set(0, 25, 0);
-    foods[0].rotation.set(0, 0, 0);
-    scene.add(foods[0]);
-    */
+    desk = models[0].scene;
+    desk.scale.set(1, 1, 1);
+    desk.position.set(8, -2, 0);
+    desk.rotation.set(0, -Math.PI/1.5, 0);
+    scene.add(desk);
+
+
 }
 
 function updateObjects() {
+    const t = document.body.getBoundingClientRect().top;
 
+    camera.position.y = (t * 0.03);
 }
 
 function createDonut() {
@@ -128,35 +95,33 @@ function createDonut() {
     scene.add(donut);
 }
 
-function scrollHandler() {
+window.addEventListener('resize', onWindowResize);
+document.body.onscroll = updateObjects;
 
+/*
+// Checks if document is being scrolled or not
+function scrollHandler() {
     let timer;
 
-    function moveCamera() {
-        const t = document.body.getBoundingClientRect().top;
-
-        // ADD UPDATES HERE
-    }
-
-    // Checks if document is being scrolled or not
     document.addEventListener("scroll", function () {
         if (timer != "undefined") {
             clearTimeout(timer);
         }
 
         // Scrolling
-        updateObjects();
+        //updateObjects();
 
         timer = setTimeout(function () {
-            console.log("Now they're not scrolling");
             // Not scrolling
 
-        }, 100);
+        }, 10);
     });
 }
 
+ */
+
 function start() {
-    scrollHandler();
+    //scrollHandler();
     //createDonut();
     animate();
 }
@@ -174,7 +139,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-/* For Scrolling to location */
+/* For scrolling to location */
 $("#about").click(function () {
     $('html, body').animate({
         scrollTop: $(".about").offset().top
@@ -208,6 +173,36 @@ $(window).scroll(function () {
     }
 });
 
+/* Handles dark mode */
+function darkMode() {
+    let my_logo = document.getElementById("my_logo");
+    let dark = document.getElementById("dark");
+    dark.checked = false;
+
+    dark.addEventListener('change', function () {
+        if (this.checked) {
+            // Dark Color
+            my_logo.src = "/dark.svg";
+            scene.background = new THREE.Color(0x2E383F);
+
+            // Swaps Colors
+            let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+            document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
+            document.documentElement.style.setProperty('--dark-color', temp);
+
+
+        } else {
+            // Light Color
+            my_logo.src = "/favicon.svg";
+            scene.background = new THREE.Color(0xecede8);
+
+            // Swaps Colors
+            let temp = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+            document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue('--dark-color'));
+            document.documentElement.style.setProperty('--dark-color', temp);
+        }
+    });
+}
 
 
 init();

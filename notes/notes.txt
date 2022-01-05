@@ -8,7 +8,6 @@ Food Theme:
 - White background, Apple style font
 - Move mouth based on mouse position x
 
-
 - Scroll and generates new foods, some sort of interaction with swipe to move them,
 - Make the food a game,
 
@@ -42,7 +41,8 @@ Projects:
 - Universafe
 
 Todo:
-    - Add hover to show other projects images
+     - START THREE.JS
+
     - Others section:
         - Include clubs, articles, etc.
         - Experience, C3 investments, tech4all
@@ -53,3 +53,15 @@ Todo:
 
     - Fix colors:
 
+IDEAS FOR 3d Background:
+    - Have a bunch of 3d objects floating aimlessly around the screen,
+    mouse pushes them to the side
+
+    - 3d cubes that show more elements, fall from top when scrolling
+
+    - Scroll forward, through tunnels, space, etc.
+
+    - Move drone/spaceship/car left or right based on mouse position, some
+    sort of endless runner, need to make it less distracting
+
+    -
