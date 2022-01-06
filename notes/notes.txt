@@ -41,6 +41,25 @@ Projects:
 - Universafe
 
 Todo:
+
+
+
+
+
+
+
+
+
+
+CLICK TO FIX OBJECT POSITION
+
+
+
+
+
+
+
+
      - START THREE.JS
 
     - Others section:

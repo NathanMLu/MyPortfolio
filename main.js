@@ -1,6 +1,6 @@
-let scene, camera, renderer, loader, sizes;
+let scene, camera, renderer, loader, sizes, mouse;
 let material, geometry, texture, normal;
-let sphere;
+let sphere, mousepos;
 let bubbles = [];
 
 /* FOR DEBUG ONLY, REMOVE AFTER */
@@ -18,13 +18,13 @@ function init() {
     scene = new THREE.Scene();
 
     // Camera
-    camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-    camera.position.set(0, 0, 2);
+    camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1, 100);
+    camera.position.set(0, 0, 10);
     scene.add(camera)
 
     // Point Light (shadows)
-    const pointLight = new THREE.PointLight(0xffffff, 0.1);
-    pointLight.position.set(2, 3, 4);
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(0, 0, 0);
     scene.add(pointLight);
 
     // Main Light
@@ -47,8 +47,13 @@ function init() {
 
 
     //const lightHelper = new THREE.PointLightHelper(pointLight)
-    //const gridHelper = new THREE.GridHelper(200, 50);
-    //scene.add(lightHelper, gridHelper)
+    const gridHelper = new THREE.GridHelper(200, 50);
+    scene.add(gridHelper)
+
+    mouse = {
+        x:0,
+        y:0
+    };
 
     //const axesHelper = new THREE.AxesHelper(5);
     //scene.add(axesHelper);
@@ -96,28 +101,52 @@ function initModels(models) {
 }
 
 function initObjects(){
-    geometry = new THREE.SphereGeometry(1, 64, 32);
-    texture = new THREE.TextureLoader().load('resources/textures/cube.jpg');
-    normal = new THREE.TextureLoader().load('resources/textures/cube_normal.jpg');
+    geometry = new THREE.TorusKnotGeometry(1, 0.3, 200, 25);
+    //texture = new THREE.TextureLoader().load('resources/textures/cube.jpg');
+    //normal = new THREE.TextureLoader().load('resources/textures/cube_normal.png');
     material = new THREE.MeshStandardMaterial({
-        map: texture,
-        normalMap: normal,
+        color: 0x04adf6,
+        metalness: 0.7,
+        flatShading: true;
+        roughness: 0
     });
-
     sphere = new THREE.Mesh(geometry,material)
+    sphere.position.set(0,0,0);
+
     scene.add(sphere)
 }
 
 function updateScroll() {
     const t = document.body.getBoundingClientRect().top;
 
-    camera.position.y = (t * 0.03);
+    sphere.rotation.y = 0.002 * t
 }
 
 function updateObjects(elapsedTime) {
-    sphere.rotation.y = .5 * elapsedTime
+    //sphere.rotation.y = .5 * elapsedTime
 }
 
+function move(mesh, speed) {
+    let d = mesh.position.x - mesh2.position.x;
+    if (mesh.position.x > mesh2.position.x) {
+        mesh.position.x -= Math.min(speed, d);
+    }
+}
+
+document.addEventListener('mousemove', (event) => {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+    const vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
+    vector.unproject( camera );
+    const dir = vector.sub( camera.position ).normalize();
+    const distance = - camera.position.z / dir.z;
+    mousepos = camera.position.clone().add( dir.multiplyScalar( distance ) );
+
+    //console.log(pos)
+
+    sphere.position.copy(mousepos);
+});
 
 window.addEventListener('resize', onWindowResize);
 document.body.onscroll = updateScroll;
@@ -140,6 +169,9 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
+
+/* For user mouse position */
+
 
 /* For scrolling to location */
 $("#about").click(function () {
