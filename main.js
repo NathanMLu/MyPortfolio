@@ -107,7 +107,7 @@ function initObjects(){
     material = new THREE.MeshStandardMaterial({
         color: 0x04adf6,
         metalness: 0.7,
-        flatShading: true;
+        flatShading: true,
         roughness: 0
     });
     sphere = new THREE.Mesh(geometry,material)
