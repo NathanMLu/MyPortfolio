@@ -47,8 +47,8 @@ function init() {
 
 
     //const lightHelper = new THREE.PointLightHelper(pointLight)
-    const gridHelper = new THREE.GridHelper(200, 50);
-    scene.add(gridHelper)
+    //const gridHelper = new THREE.GridHelper(200, 50);
+    //scene.add(gridHelper)
 
     mouse = {
         x:0,
@@ -113,7 +113,7 @@ function initObjects(){
     sphere = new THREE.Mesh(geometry,material)
     sphere.position.set(0,0,0);
 
-    scene.add(sphere)
+    //scene.add(sphere)
 }
 
 function updateScroll() {
