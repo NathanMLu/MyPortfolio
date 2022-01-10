@@ -1,2 +1,2 @@
-# NathanMLu.github.io
+# http://natelu.me/
 My personal portfolio!
