@@ -41,6 +41,11 @@ Projects:
 - Universafe
 
 Todo:
+- Make socials clearer (devpost, twitter, youtube, github, linkedin)
+- Remake with bootstrap
+- Make it responsive to mobile
+- Add GreenFields and OmniChat
+- Add Three.JS
 
 
 
